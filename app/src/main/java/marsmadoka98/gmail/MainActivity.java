@@ -4,8 +4,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-import android.app.FragmentTransaction;
+//import android.app.FragmentTransaction;
 //import android.app.Fragment;
 import android.os.Bundle;
 import android.view.Menu;
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new TopFragment();};
 
         //display the  fragments using a transaction
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.content_frame, fragment);
         ft.addToBackStack(null);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
