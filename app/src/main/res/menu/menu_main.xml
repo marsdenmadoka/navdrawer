@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
-
+    <item android:id="@+id/action_create_order"
+        android:title="@string/action_create_order"
+        android:icon="@drawable/baseline_assignment"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" />
     <item android:id="@+id/action_settings"
         android:title="@string/settings"
         android:orderInCategory="100"
@@ -11,6 +15,7 @@
     <item android:id="@+id/action_share"
     android:title="@string/share"
     android:orderInCategory="2"
+        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"
     app:showAsAction="ifRoom"
         />
 </menu>
