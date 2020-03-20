@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/pizza_recycler"
+    android:scrollbars="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
+
+
+<!--
+You add scrollbars to the recycler view using the
+android:scrollbars attribute. We’ve set this to
+"vertical" because we want our recycler view to display a
+vertical list that will scroll vertically
+-->
