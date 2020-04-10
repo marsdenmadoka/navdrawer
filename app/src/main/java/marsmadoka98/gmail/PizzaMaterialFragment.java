@@ -50,6 +50,7 @@ public class PizzaMaterialFragment extends Fragment {
                 intent.putExtra(PizzaDetailActivity.EXTRA_PIZZANO, position);
                 getActivity().startActivity(intent);
             }
+
         });
 
         return pizzaRecycler;

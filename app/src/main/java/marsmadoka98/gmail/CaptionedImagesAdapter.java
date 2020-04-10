@@ -27,7 +27,7 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
     }
 
     public static interface Listener {
-        public void onClick(int position);
+        void onClick(int position);;
     }
 
     public void setListener(Listener listener){ //Activity’s and fragments will use this method to register as a listener.
@@ -59,12 +59,15 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
      recycler view needs to display data in a view holder */
     public void onBindViewHolder(ViewHolder holder, final int position){
         CardView cardView = holder.cardView;
-        ImageView imageView = (ImageView)cardView.findViewById(R.id.info_image); //Display the image in the ImageView.
+
+        ImageView imageView = cardView.findViewById(R.id.info_image); //Display the image in the ImageView.
         Drawable drawable = cardView.getResources().getDrawable(imageIds[position]);
         imageView.setImageDrawable(drawable);
         imageView.setContentDescription(captions[position]);
         TextView textView = (TextView)cardView.findViewById(R.id.info_text);
-        textView.setText(captions[position]); //Display the caption in the TextView..
+        textView.setText(captions[position]);
+
+        //Display the caption in the TextView..
             //When the CardView is clicked, call the Listener onClick() method.
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +75,16 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
                 if (listener != null) {
                     listener.onClick(position);
                 }
+            }
+        });
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    if (listener != null) {
+                        listener.onClick(position);
+                    }
+
             }
         });
 

@@ -37,12 +37,13 @@ public class MainActivity extends AppCompatActivity {
     private int currentPosition =0;
     private ShareActionProvider shareActionProvider;
 
-    private class DrawerItemClickListener implements ListView.OnItemClickListener { //This describes the OnItemClickListener.
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-            selectItem(position); //Call the selectItem() method.//Code to run when an item in the navigation drawer gets clicked
-        }
+
+        } //This describes the OnItemClickListener.
+
     };
 
 
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        titles = getResources().getStringArray(R.array.titles);//gettig
+        titles = getResources().getStringArray(R.array.titles);//getting the title array from string.xml
         drawerList = (ListView) findViewById(R.id.drawer);//get the list view
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);//Get a reference to theDrawerLayout.
         drawerList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_activated_1, titles)); //dis[lay the title array values from string.xml to the list view called drawer
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //  Modifying action bar items at runtime
-            public void onDrawerOpened(View drawerView) { //called when darwe is open
+            public void onDrawerOpened(View drawerView) { //called when darawer is open
                 super.onDrawerOpened(drawerView);
                 invalidateOptionsMenu();
             }
