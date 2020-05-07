@@ -125,7 +125,8 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new StoresFragment();
                 break;
             default:
-                fragment = new TopFragment();}
+                fragment = new  TopFragment();
+        }
 
         //display the  fragments using a transaction
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
